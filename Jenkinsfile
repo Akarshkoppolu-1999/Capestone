@@ -16,18 +16,26 @@ pipeline {
             }
         }
 
-        stage('Backend Unit Tests') {
+        stage('Build & Test Backend') {
             steps {
-                // We run tests inside a Docker container so we don't need Python installed on the Jenkins machine
-                sh 'docker run --rm -v ${WORKSPACE}/backend:/app -w /app python:3.9-slim /bin/sh -c "pip install -r requirements.txt && pytest"'
+                sh '''
+                    # 1. First, build the backend image
+                    docker build -t ${IMAGE_NAME_BACKEND}:test ./backend
+                    
+                    # 2. Run the tests inside the built image
+                    docker run --rm ${IMAGE_NAME_BACKEND}:test pytest
+                '''
             }
         }
 
-        stage('Build Docker Images') {
+        stage('Build Frontend & Prepare Production') {
             steps {
                 sh '''
-                    docker build -t ${IMAGE_NAME_BACKEND}:latest ./backend
+                    # Build frontend image
                     docker build -t ${IMAGE_NAME_FRONTEND}:latest ./frontend
+                    
+                    # Tag the verified backend image as latest
+                    docker tag ${IMAGE_NAME_BACKEND}:test ${IMAGE_NAME_BACKEND}:latest
                 '''
             }
         }
