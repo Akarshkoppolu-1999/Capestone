@@ -43,8 +43,9 @@ pipeline {
         stage('Security Scan (Trivy)') {
             steps {
                 sh '''
-                    trivy image --severity CRITICAL,HIGH ${IMAGE_NAME_BACKEND}:latest
-                    trivy image --severity CRITICAL,HIGH ${IMAGE_NAME_FRONTEND}:latest
+                    # Using Docker to run Trivy so you don't have to install it on the server
+                    docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image --severity CRITICAL,HIGH ${IMAGE_NAME_BACKEND}:latest
+                    docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image --severity CRITICAL,HIGH ${IMAGE_NAME_FRONTEND}:latest
                 '''
             }
         }
