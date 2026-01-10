@@ -1,12 +1,12 @@
 # Capstone Project: Automated CI/CD System
-**By: Favour Lawrence**
+**By: Akarsh Koppolu**
 
-## 🚀 Project Overview
+##  Project Overview
 This repository contains a full-stack **2-tier web application** with a complete, automated CI/CD pipeline. The system handles building, testing, security scanning, and automated deployment to a staging environment using **Docker**, **GitHub Actions**, and **Jenkins**.
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 The application consists of a **Flask API backend** and a **Modern Glassmorphism Frontend**, backed by a **PostgreSQL database**.
 
 ```mermaid
@@ -24,7 +24,7 @@ graph TD
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Frontend**: HTML5, CSS3 (Glassmorphism), JavaScript
 - **Backend**: Python (Flask)
 - **Database**: PostgreSQL 15
@@ -34,7 +34,7 @@ graph TD
 
 ---
 
-## 🚀 How to Run Locally
+##  How to Run Locally
 1. **Clone the repository**:
    ```bash
    git clone <your-repository-url>
@@ -48,7 +48,7 @@ graph TD
 
 ---
 
-## ⛓️ CI/CD Pipeline (GitHub Actions)
+##  CI/CD Pipeline (GitHub Actions)
 The pipeline is defined in `.github/workflows/main.yml`.
 
 ### Pipeline Stages:
@@ -64,14 +64,14 @@ To enable the pipeline, add these secrets to your GitHub repo:
 
 ---
 
-## 🛡️ Jenkins Integration (Alternative)
+##  Jenkins Integration (Alternative)
 A `Jenkinsfile` is provided for users who prefer Jenkins.
 - **Guide**: [Jenkins Setup Guide](docs/jenkins_setup.md)
 - **Stages**: Checkout → Unit Tests → Build Docker → Security Scan → Push → Deploy.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 - `backend/`: Flask server and Dockerfile.
 - `frontend/`: Static assets and Nginx configuration.
 - `scripts/`: Deployment and verification shell scripts.
@@ -79,5 +79,5 @@ A `Jenkinsfile` is provided for users who prefer Jenkins.
 
 ---
 
-## 🎥 Demo & Walkthrough
+##  Demo & Walkthrough
 Detailed recording instructions and success verification steps can be found in the [Demo Guide](docs/demo_guide.md).
