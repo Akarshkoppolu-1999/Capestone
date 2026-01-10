@@ -18,11 +18,8 @@ pipeline {
 
         stage('Backend Unit Tests') {
             steps {
-                sh '''
-                    cd backend
-                    python3 -m pip install -r requirements.txt
-                    pytest
-                '''
+                // We run tests inside a Docker container so we don't need Python installed on the Jenkins machine
+                sh 'docker run --rm -v ${WORKSPACE}/backend:/app -w /app python:3.9-slim /bin/sh -c "pip install -r requirements.txt && pytest"'
             }
         }
 
