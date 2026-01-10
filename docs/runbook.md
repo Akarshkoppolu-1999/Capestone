@@ -15,4 +15,4 @@ If you need to deploy manually:
 ## Verification Steps
 1. Check container status: `docker ps`.
 2. Check logs: `docker-compose logs -f`.
-3. Verify API health: `curl http://localhost:8080/api/health`.
+3. Verify API health: `curl http://localhost:8081/api/health`.
