@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        // Change these to your actual Docker Hub username
-        DOCKER_USER = "your-dockerhub-username"
+        // IMPORTANT: Change "akarshkoppolu14" to your EXACT Docker Hub Username
+        DOCKER_USER = "akarshkoppolu14" 
         IMAGE_NAME_BACKEND = "${DOCKER_USER}/capstone-backend"
         IMAGE_NAME_FRONTEND = "${DOCKER_USER}/capstone-frontend"
         DOCKER_CREDS = credentials('docker-hub-credentials')
