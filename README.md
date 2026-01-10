@@ -79,5 +79,3 @@ A `Jenkinsfile` is provided for users who prefer Jenkins.
 
 ---
 
-##  Demo & Walkthrough
-Detailed recording instructions and success verification steps can be found in the [Demo Guide](docs/demo_guide.md).
