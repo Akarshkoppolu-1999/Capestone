@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project | CI/CD Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Capstone Project</h1>
+            <p class="subtitle">Automated CI/CD Pipeline Demonstration</p>
+        </header>
+
+        <main>
+            <div class="card glass">
+                <h2>System Status</h2>
+                <div id="status-container">
+                    <div class="status-item">
+                        <span>Backend:</span>
+                        <span id="backend-status" class="badge loading">Checking...</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Database:</span>
+                        <span id="db-status" class="badge loading">Checking...</span>
+                    </div>
+                </div>
+                <button id="refresh-btn" class="primary-btn">Refresh Status</button>
+            </div>
+
+            <div class="info-section">
+                <h3>Architecture Overview</h3>
+                <div class="tech-stack">
+                    <span class="tech">Docker</span>
+                    <span class="tech">Flask</span>
+                    <span class="tech">PostgreSQL</span>
+                    <span class="tech">GitHub Actions</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Capstone Project - Favour Lawrence</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
