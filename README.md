@@ -1,5 +1,6 @@
 # Capstone Project: Automated CI/CD System
 **By: Akarsh Koppolu**
+**EMP ID : RIS00512**
 
 ##  Project Overview
 This repository contains a full-stack **2-tier web application** with a complete, automated CI/CD pipeline. The system handles building, testing, security scanning, and automated deployment to a staging environment using **Docker**, **GitHub Actions**, and **Jenkins**.
